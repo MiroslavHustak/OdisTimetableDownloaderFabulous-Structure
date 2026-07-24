@@ -13,6 +13,7 @@ EmbeddedTP (Project)
 │
 OdisTimetableDownloaderMAUI (Solution)
 ├── OdisTimetableDownloaderMAUI.fsproj
+├── Educational code.txt
 ├── AssemblyInfo/
 │   └── AssemblyInfo.fs
 ├── NativeCode/
@@ -81,9 +82,7 @@ OdisTimetableDownloaderMAUI (Solution)
 │   │   └── AndroidMediaStore.fs
 │   ├── DataManipulation/
 │   │   ├── DataModelling/
-│   │   │   ├── DataModels.fs
-│   │   │   ├── DataTransferModels.fs
-│   │   │   └── TransformationLayers.fs
+│   │   │   └── DataModels.fs
 │   │   ├── PureFunctions/
 │   │   │   └── ParseRecordData.fs
 │   │   └── ImpureFunctions/
@@ -93,6 +92,10 @@ OdisTimetableDownloaderMAUI (Solution)
 │   │   ├── PureHelpers/
 │   │   │   └── CreatePathsAndNames.fs
 │   │   └── ImpureFunctions/
+│   │       ├── DataModelling/          
+│   │       │   ├── DataModels.fs
+│   │       │   ├── DataTransferModels.fs
+│   │       │   └── TransformationLayers.fs
 │   │       ├── ConcurrencyGuard.fs
 │   │       ├── RestApiLinks.fs
 │   │       └── IO_Operations.fs
