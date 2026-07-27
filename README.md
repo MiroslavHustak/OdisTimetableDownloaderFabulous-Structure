@@ -3,14 +3,16 @@
 ************************************************************
 
 **The actual solution structure, revealing unidirectional F# project dependencies (as GitHub distorts the reality by displaying only an alphabetical order), is shown in the chart below:**
-<pre lang="markdown"> ```
-EmbeddedTP (Project)
+
+```
+EmbeddedTP/
 ├── EmbeddedTP.fsproj
 ├── EmbeddedTP.fs
-├── KODISJson/
-│   ├── kodisMHDTotal.json
-│   └── kodisMHDTotal2_0.json
-│
+└── KODISJson/
+    ├── kodisMHDTotal.json
+    └── kodisMHDTotal2_0.json
+```
+```
 OdisTimetableDownloaderMAUI (Solution)
 ├── OdisTimetableDownloaderMAUI.fsproj
 ├── Educational code.txt
@@ -83,21 +85,25 @@ OdisTimetableDownloaderMAUI (Solution)
 │   ├── DataManipulation/
 │   │   ├── DataModelling/
 │   │   │   └── DataModels.fs
+│   │   ├── DataModellingApi/
+│   │   │   ├── DataModels.fs
+│   │   │   ├── DataTransferModels.fs
+│   │   │   └── TransformationLayers.fs
 │   │   ├── PureFunctions/
 │   │   │   └── ParseRecordData.fs
 │   │   └── ImpureFunctions/
 │   │       ├── JsonDataParser.fs
-│   │       └── TimetableLinksParser.fs
+│   │       ├── TimetableLinksParser.fs
+│   │       ├── RestApiLinks.fs
+│   │       └── ConcurrencyGuard.fs
 │   ├── IO_Operations/
 │   │   ├── PureHelpers/
 │   │   │   └── CreatePathsAndNames.fs
 │   │   └── ImpureFunctions/
-│   │       ├── DataModelling/          
+│   │       ├── DataModelling/
 │   │       │   ├── DataModels.fs
 │   │       │   ├── DataTransferModels.fs
 │   │       │   └── TransformationLayers.fs
-│   │       ├── ConcurrencyGuard.fs
-│   │       ├── RestApiLinks.fs
 │   │       └── IO_Operations.fs
 │   └── MainBusinessLogic_R/
 │       ├── KodisJsonTP/
@@ -143,9 +149,22 @@ OdisTimetableDownloaderMAUI (Solution)
 ├── Platforms/
 │   ├── Android/
 │   │   ├── Resources/
+│   │   │   ├── Fonts/
+│   │   │   ├── Images/
+│   │   │   ├── AppIcon/
+│   │   │   │   ├── appicon.svg
+│   │   │   │   └── appiconfg.svg
+│   │   │   ├── Splash/
+│   │   │   │   └── splash.svg
+│   │   │   ├── Raw/
+│   │   │   ├── drawable/
+│   │   │   │   └── ic_download.xml
 │   │   │   ├── xml/
-│   │   │   ├── values/
-│   │   │   └── drawable/
+│   │   │   │   ├── file_paths.xml
+│   │   │   │   └── network_security_config.xml
+│   │   │   └── values/
+│   │   │       └── colors.xml
+│   │   ├── Assets/
 │   │   ├── AndroidManifest.xml
 │   │   ├── MainApplication.fs
 │   │   └── MainActivity.fs
@@ -153,6 +172,16 @@ OdisTimetableDownloaderMAUI (Solution)
 │       ├── app.manifest
 │       ├── App.fs
 │       └── Main.fs
-└── MauiProgram.fs
-``` </pre>
-
+├── Resources/
+│   ├── Fonts/
+│   ├── Images/
+│   ├── AppIcon/
+│   │   ├── appicon.svg
+│   │   └── appiconfg.svg
+│   ├── Splash/
+│   │   └── splash.svg
+│   └── Raw/
+├── MauiProgram.fs
+└── Secrets/
+    └── secrets.json
+```
