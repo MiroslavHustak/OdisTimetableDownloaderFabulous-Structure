@@ -64,7 +64,7 @@ OdisTimetableDownloaderMAUI (Solution)
 │   └── Connectivity.fs
 ├── Secrets/
 │   ├── ApiKeys.fs
-│   └── secrets.json
+│   └── Secrets.json
 ├── Logging/
 │   ├── DataModelling/
 │   │   ├── DataModels.fs
