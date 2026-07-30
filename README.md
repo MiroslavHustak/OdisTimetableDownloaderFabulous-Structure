@@ -183,5 +183,5 @@ OdisTimetableDownloaderMAUI (Solution)
 │   └── Raw/
 ├── MauiProgram.fs
 └── Secrets/
-    └── secrets.json
+    └── Secrets.json
 ```
