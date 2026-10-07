@@ -20,7 +20,7 @@ OdisTimetableDownloaderMAUI (Solution)
 │   └── AssemblyInfo.fs
 ├── NativeCode/
 │   └── NativeCode.fs
-├── Types/
+├── Core/
 │   ├── TDD.fs
 │   ├── ErrorTypes.fs
 │   ├── Types.fs
@@ -35,7 +35,7 @@ OdisTimetableDownloaderMAUI (Solution)
 │   └── Applicatives.fs
 ├── CEBuilders/
 │   └── CEBuilders.fs
-├── OptionResultExtensions/
+├── Extensions/
 │   ├── ResultExtensions.fs
 │   └── OptionExtensions.fs
 ├── Helpers/
@@ -74,7 +74,7 @@ OdisTimetableDownloaderMAUI (Solution)
 │   └── Logging.fs
 ├── ExceptionHandling/
 │   └── ExceptionHandlers.fs
-├── BusinessLogic/
+├── Domain/
 │   ├── AndroidSpecificCodeBL/
 │   │   ├── DataModelling/
 │   │   │   ├── DataModels.fs
@@ -100,12 +100,8 @@ OdisTimetableDownloaderMAUI (Solution)
 │   │   ├── PureHelpers/
 │   │   │   └── CreatePathsAndNames.fs
 │   │   └── ImpureFunctions/
-│   │       ├── DataModelling/
-│   │       │   ├── DataModels.fs
-│   │       │   ├── DataTransferModels.fs
-│   │       │   └── TransformationLayers.fs
 │   │       └── IO_Operations.fs
-│   └── MainBusinessLogic_R/
+│   └── BusinessLogic/
 │       ├── KodisJsonTP/
 │       │   ├── KODIS_BL_Record_R_Json.fs
 │       │   └── KODIS_BL_Record_R.fs
@@ -118,14 +114,14 @@ OdisTimetableDownloaderMAUI (Solution)
 │       │   ├── MDPO_BL_R_Json.fs
 │       │   └── MDPO_BL_R.fs
 │       └── TP_Canopy_Difference_R.fs
-├── ApplicationDesign_R/
+├── Workflows/
 │   ├── DPO_R.fs
 │   ├── MDPO_R.fs
 │   ├── KodisCanopy/
 │   │   └── KODIS_Record4_R.fs
 │   └── KodisJsonTP/
 │       └── KODIS_Record_R.fs
-├── XElmish/
+├── XElmishUI/
 │   ├── Infrastructure/
 │   │   ├── AndroidSpecificCode/
 │   │   │   ├── AndroidSpecificCode.fs
@@ -146,25 +142,19 @@ OdisTimetableDownloaderMAUI (Solution)
 │   │   ├── Dpo.fs
 │   │   └── Mdpo.fs
 │   └── App_New_UX.fs
+├── Tests/
+│   └── PropertyBasedTesting.fs
 ├── Platforms/
 │   ├── Android/
+│   │   ├── Assets/
 │   │   ├── Resources/
-│   │   │   ├── Fonts/
-│   │   │   ├── Images/
-│   │   │   ├── AppIcon/
-│   │   │   │   ├── appicon.svg
-│   │   │   │   └── appiconfg.svg
-│   │   │   ├── Splash/
-│   │   │   │   └── splash.svg
-│   │   │   ├── Raw/
 │   │   │   ├── drawable/
 │   │   │   │   └── ic_download.xml
-│   │   │   ├── xml/
-│   │   │   │   ├── file_paths.xml
-│   │   │   │   └── network_security_config.xml
-│   │   │   └── values/
-│   │   │       └── colors.xml
-│   │   ├── Assets/
+│   │   │   ├── values/
+│   │   │   │   └── colors.xml
+│   │   │   └── xml/
+│   │   │       ├── file_paths.xml
+│   │   │       └── network_security_config.xml
 │   │   ├── AndroidManifest.xml
 │   │   ├── MainApplication.fs
 │   │   └── MainActivity.fs
@@ -182,6 +172,5 @@ OdisTimetableDownloaderMAUI (Solution)
 │   │   └── splash.svg
 │   └── Raw/
 ├── MauiProgram.fs
-└── Secrets/
-    └── Secrets.json
+└── GeneratedLicenseKey.fs
 ```
