@@ -135,7 +135,7 @@ OdisTimetableDownloaderMAUI (Solution)
 │   ├── ViewHelpers/
 │   │   ├── ScreenHelpers.fs
 │   │   └── ProgressWidgets.fs
-│   ├── Engines/
+│   ├── Commands/
 │   │   ├── Upload.fs
 │   │   ├── KodisTP.fs
 │   │   ├── KodisCanopy.fs
