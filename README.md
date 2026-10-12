@@ -171,6 +171,5 @@ OdisTimetableDownloaderMAUI (Solution)
 │   ├── Splash/
 │   │   └── splash.svg
 │   └── Raw/
-├── MauiProgram.fs
-└── GeneratedLicenseKey.fs
+└── MauiProgram.fs
 ```
