@@ -2,7 +2,7 @@
 
 ************************************************************
 
-**The actual solution structure, revealing unidirectional F# project dependencies (as GitHub distorts the reality by displaying only an alphabetical order), is shown in the chart below:**
+**The actual solution structure, revealing unidirectional F# project dependencies (as GitHub distorts the reality by displaying only an alphabetical order), is shown in the chart below. Top to bottom = compile order; a file can only use files above it:**
 
 ```
 EmbeddedTP/
@@ -16,6 +16,7 @@ EmbeddedTP/
 OdisTimetableDownloaderMAUI (Solution)
 ├── OdisTimetableDownloaderMAUI.fsproj
 ├── Educational code.txt
+├── obj/.../GeneratedLicenseKey.fs        (generated at build, compiled first)
 ├── AssemblyInfo/
 │   └── AssemblyInfo.fs
 ├── NativeCode/
@@ -75,45 +76,47 @@ OdisTimetableDownloaderMAUI (Solution)
 ├── ExceptionHandling/
 │   └── ExceptionHandlers.fs
 ├── Domain/
+│   ├── AndroidSpecificCodeDomain/
+│   │   └── DataModelling/
+│   │       ├── DataModels.fs
+│   │       ├── DataTransferModels.fs
+│   │       └── TransformationLayers.fs
+│   └── DataManipulation/
+│       ├── DataModellingApi/
+│       │   ├── DataModels.fs
+│       │   ├── DataTransferModels.fs
+│       │   └── TransformationLayers.fs
+│       ├── DataModelling/
+│       │   └── DataModels.fs
+│       └── PureFunctions/
+│           └── ParseRecordData.fs
+├── Infrastructure/
 │   ├── AndroidSpecificCodeBL/
-│   │   ├── DataModelling/
-│   │   │   ├── DataModels.fs
-│   │   │   ├── DataTransferModels.fs
-│   │   │   └── TransformationLayers.fs
 │   │   ├── AndroidClientActivation.fs
 │   │   └── AndroidMediaStore.fs
-│   ├── DataManipulation/
-│   │   ├── DataModelling/
-│   │   │   └── DataModels.fs
-│   │   ├── DataModellingApi/
-│   │   │   ├── DataModels.fs
-│   │   │   ├── DataTransferModels.fs
-│   │   │   └── TransformationLayers.fs
-│   │   ├── PureFunctions/
-│   │   │   └── ParseRecordData.fs
-│   │   └── ImpureFunctions/
-│   │       ├── JsonDataParser.fs
-│   │       ├── TimetableLinksParser.fs
-│   │       ├── RestApiLinks.fs
-│   │       └── ConcurrencyGuard.fs
-│   ├── IO_Operations/
-│   │   ├── PureHelpers/
-│   │   │   └── CreatePathsAndNames.fs
-│   │   └── ImpureFunctions/
-│   │       └── IO_Operations.fs
-│   └── BusinessLogic/
-│       ├── KodisJsonTP/
-│       │   ├── KODIS_BL_Record_R_Json.fs
-│       │   └── KODIS_BL_Record_R.fs
-│       ├── KodisCanopy/
-│       │   ├── KODIS_BL_Record4_R_Json.fs
-│       │   └── KODIS_BL_Record4_R.fs
-│       ├── Dpo/
-│       │   └── DPO_BL_R.fs
-│       ├── Mdpo/
-│       │   ├── MDPO_BL_R_Json.fs
-│       │   └── MDPO_BL_R.fs
-│       └── TP_Canopy_Difference_R.fs
+│   └── ImpureFunctions/
+│       ├── IO_Operations/
+│       │   ├── PureHelpers/
+│       │   │   └── CreatePathsAndNames.fs
+│       │   └── ImpureFunctions/
+│       │       └── IO_Operations.fs
+│       ├── ConcurrencyGuard.fs
+│       ├── JsonDataParser.fs
+│       ├── RestApiLinks.fs
+│       └── TimetableLinksParser.fs
+├── BusinessLogic/
+│   ├── KodisJsonTP/
+│   │   ├── KODIS_BL_Record_R_Json.fs
+│   │   └── KODIS_BL_Record_R.fs
+│   ├── KodisCanopy/
+│   │   ├── KODIS_BL_Record4_R_Json.fs
+│   │   └── KODIS_BL_Record4_R.fs
+│   ├── Dpo/
+│   │   └── DPO_BL_R.fs
+│   ├── Mdpo/
+│   │   ├── MDPO_BL_R_Json.fs
+│   │   └── MDPO_BL_R.fs
+│   └── TP_Canopy_Difference_R.fs
 ├── Workflows/
 │   ├── DPO_R.fs
 │   ├── MDPO_R.fs
@@ -142,12 +145,8 @@ OdisTimetableDownloaderMAUI (Solution)
 │   │   ├── Dpo.fs
 │   │   └── Mdpo.fs
 │   └── App_New_UX.fs
-├── Tests/
-│   ├── Data/...
-│   ├── TestedCode/...
-│   ├── PropertyBasedTesting.fs/
-│   └── Program.fs
-├── Platforms/
+├── MauiProgram.fs
+├── Platforms/                            (conditional items, compiled after the above)
 │   ├── Android/
 │   │   ├── Assets/
 │   │   ├── Resources/
@@ -174,5 +173,9 @@ OdisTimetableDownloaderMAUI (Solution)
 │   ├── Splash/
 │   │   └── splash.svg
 │   └── Raw/
-└── MauiProgram.fs
+└── Tests/                                (not part of the main fsproj)
+    ├── Data/...
+    ├── TestedCode/...
+    ├── PropertyBasedTesting.fs/
+    └── Program.fs
 ```
