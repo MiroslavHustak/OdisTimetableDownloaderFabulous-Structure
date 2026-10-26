@@ -143,7 +143,10 @@ OdisTimetableDownloaderMAUI (Solution)
 │   │   └── Mdpo.fs
 │   └── App_New_UX.fs
 ├── Tests/
-│   └── PropertyBasedTesting.fs
+│   ├── Data/...
+│   ├── TestedCode/...
+│   ├── PropertyBasedTesting.fs/
+│   └── Program.fs
 ├── Platforms/
 │   ├── Android/
 │   │   ├── Assets/
